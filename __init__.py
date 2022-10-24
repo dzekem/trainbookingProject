@@ -2,8 +2,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
 
-
 db = SQLAlchemy()
+
 
 def create_flask_app():
     app = Flask(__name__)
@@ -16,5 +16,3 @@ def create_flask_app():
 
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
-
-
