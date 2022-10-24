@@ -2,8 +2,22 @@ from flask import Flask
 
 import app
 from flask_login import LoginManager
+from flask import Blueprint
+from . import db
 
-login_manager = LoginManager()
+auth = Blueprint('auth', __name__)
 
-@app.route('/login',methods=['GET','POST'])
+
+@auth.route('/login')
 def login():
+    return 'Login'
+
+
+@auth.route('/signup')
+def signup():
+    return 'Signup'
+
+
+@auth.route('/logout')
+def logout():
+    return 'Logout'
